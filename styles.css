@@ -4,6 +4,8 @@ body {
   }
   h1 {
     color: blue;
+    border: 2px solid red;
+    border-radius: 5px;
   }
   p {
     color: red;
