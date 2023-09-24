@@ -65,21 +65,17 @@ const ComputersCanvas = () => {
 		<Canvas
 			frameloop='demand'
 			shadows
-			camera={{ position: [20, 3, 5], fov: 35 }} // Set camera position and field of view
+			camera={{ position: [20, 3, 5], fov: 35 }}
 			gl={{ preserveDrawingBuffer: true }}>
-			{' '}
-			{/* Set WebGL rendering options */}
 			<Suspense fallback={<CanvasLoader />}>
-				{' '}
-				{/* Display loading component while assets are loading */}
 				<OrbitControls
-					enableZoom={false} // Disable zooming with the mouse
-					maxPolarAngle={Math.PI / 2} // Set maximum polar angle for the camera
-					minPolarAngle={Math.PI / 2} // Set minimum polar angle for the camera
+					enableZoom={false}
+					maxPolarAngle={Math.PI / 2}
+					minPolarAngle={Math.PI / 2}
 				/>
-				<Computers isMobile={isMobile} /> {/* Render the 3D computer model */}
+				<Computers isMobile={isMobile} />
 			</Suspense>
-			<Preload all /> {/* Preload all assets */}
+			<Preload all />
 		</Canvas>
 	);
 };
