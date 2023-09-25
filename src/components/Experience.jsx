@@ -9,6 +9,29 @@ import { experiences } from '../constants';
 import { SectionWrapper } from '../hoc';
 import { textVariant } from '../utils/motion';
 
+// Main Component
+const Experience = () => {
+	return (
+		<>
+			<motion.div variants={textVariant()}>
+				<p className={styles.sectionSubText}>What I have done so far</p>
+				<h2 className={styles.sectionHeadText}>Work Experience</h2>
+			</motion.div>
+			<div className='mt-20 flex flex-col'>
+				<VerticalTimeline>
+					{experiences.map((experience, index) => (
+						<ExperienceCard
+							key={index}
+							experience={experience}
+						/>
+					))}
+				</VerticalTimeline>
+			</div>
+		</>
+	);
+};
+
+// Child Component & recieve props from parent
 const ExperienceCard = ({ experience }) => (
 	<VerticalTimelineElement
 		contentStyle={{
@@ -48,26 +71,5 @@ const ExperienceCard = ({ experience }) => (
 	</VerticalTimelineElement>
 );
 
-const Experience = () => {
-	// textVariant() makes it animate
-	return (
-		<>
-			<motion.div variants={textVariant()}>
-				<p className={styles.sectionSubText}>What I have done so far</p>
-				<h2 className={styles.sectionHeadText}>Work Experience</h2>
-			</motion.div>
-			<div className='mt-20 flex flex-col'>
-				<VerticalTimeline>
-					{experiences.map((experience, index) => (
-						<ExperienceCard
-							key={index}
-							experience={experience}
-						/>
-					))}
-				</VerticalTimeline>
-			</div>
-		</>
-	);
-};
-
+// Wrapping Component inside of a HOC (Higher Order Component) and giving it a ID name
 export default SectionWrapper(Experience, 'work');

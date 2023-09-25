@@ -1,12 +1,8 @@
-/* eslint-disable react/no-unknown-property */
-import * as THREE from 'three'; // Import the THREE.js library
-import React, { useState, useEffect } from 'react'; // Import necessary React components and hooks
+import { useState, useEffect } from 'react'; // Import necessary React components and hooks
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber'; // Import components from react-three/fiber
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei'; // Import components from react-three/drei
 import CanvasLoader from '../Loader'; // Import a custom component
-import { extend } from '@react-three/fiber'; // Import extend function
-extend({ OrbitControls }); // Extend the capabilities of the OrbitControls component
 
 // Component for rendering the 3D model of a computer
 const Computers = ({ isMobile }) => {
