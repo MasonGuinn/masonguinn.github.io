@@ -58,6 +58,7 @@ const BallCanvas = ({ icon }) => {
 			gl={{ preserveDrawingBuffer: true }}>
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls
+					enablePan={false}
 					maxPolarAngle={Math.PI / 2}
 					enableZoom={false}
 					minPolarAngle={Math.PI / 2}
