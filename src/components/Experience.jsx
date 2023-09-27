@@ -7,26 +7,30 @@ import 'react-vertical-timeline-component/style.min.css';
 import { styles } from '../styles';
 import { experiences } from '../constants';
 import { SectionWrapper } from '../hoc';
-import { textVariant } from '../utils/motion';
+import { fadeIn } from '../utils/motion';
 
 // Main Component
 const Experience = () => {
 	return (
 		<>
-			<motion.div variants={textVariant()}>
-				<p className={styles.sectionSubText}>What I have done so far</p>
-				<h2 className={styles.sectionHeadText}>Work Experience</h2>
+			<motion.div variants={fadeIn('', '', 0.1, 1)}>
+				<p className={`${styles.sectionSubText} text-center`}>
+					What I have done so far
+				</p>
+				<h2 className={`${styles.sectionHeadText} text-center`}>
+					Work Experience
+				</h2>
+				<div className='mt-20 flex flex-col'>
+					<VerticalTimeline>
+						{experiences.map((experience, index) => (
+							<ExperienceCard
+								key={index}
+								experience={experience}
+							/>
+						))}
+					</VerticalTimeline>
+				</div>
 			</motion.div>
-			<div className='mt-20 flex flex-col'>
-				<VerticalTimeline>
-					{experiences.map((experience, index) => (
-						<ExperienceCard
-							key={index}
-							experience={experience}
-						/>
-					))}
-				</VerticalTimeline>
-			</div>
 		</>
 	);
 };

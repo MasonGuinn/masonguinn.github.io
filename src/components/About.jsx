@@ -6,11 +6,43 @@ import { services } from '../constants';
 import { SectionWrapper } from '../hoc';
 import { fadeIn, textVariant } from '../utils/motion';
 
+const About = () => {
+	const about_text = `I'm a skilled software developer with experience in TypeScript and
+				JavaScript, and expertise in frameworks like React and Node.js I'm a quick learner and collaborate closely with clients to
+				create efficient, scalable, and user-friendly solutions that solve
+				real-world problems. Let's work together to bring your ideas to life!`;
+	return (
+		<>
+			<motion.div variants={textVariant()}>
+				<h2 className={`${styles.sectionSubText} text-center`}>Introduction</h2>
+
+				<h2 className={`${styles.sectionHeadText} text-center`}>About</h2>
+			</motion.div>
+
+			<motion.p
+				variants={fadeIn('', '', 0.1, 1)}
+				className='mt-4 text-secondary text-[17px]  leading-[30px] text-center'>
+				{about_text}
+			</motion.p>
+
+			<div className='mt-5 flex flex-wrap gap-10 justify-center'>
+				{services.map((service, index) => (
+					<ServiceCard
+						key={service.title}
+						index={index}
+						{...service}
+					/>
+				))}
+			</div>
+		</>
+	);
+};
+
 const ServiceCard = ({ index, title, icon }) => (
 	<Tilt className='xs:w-[250px] w-full'>
 		<motion.div
 			variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
-			className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'>
+			className='w-full red-white-gradient p-[1px] rounded-[20px] shadow-card'>
 			<div
 				options={{
 					max: 45,
@@ -31,37 +63,5 @@ const ServiceCard = ({ index, title, icon }) => (
 		</motion.div>
 	</Tilt>
 );
-
-const About = () => {
-	const about_text = `I'm a skilled software developer with experience in TypeScript and
-				JavaScript, and expertise in frameworks like React, Node.js, and
-				Three.js. I'm a quick learner and collaborate closely with clients to
-				create efficient, scalable, and user-friendly solutions that solve
-				real-world problems. Let's work together to bring your ideas to life!`;
-	return (
-		<>
-			<motion.div variants={textVariant()}>
-				<p className={styles.sectionSubText}>Introduction</p>
-				<h2 className={styles.sectionHeadText}>Overview.</h2>
-			</motion.div>
-
-			<motion.p
-				variants={fadeIn('', '', 0.1, 1)}
-				className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-				{about_text}
-			</motion.p>
-
-			<div className='mt-20 flex flex-wrap gap-10'>
-				{services.map((service, index) => (
-					<ServiceCard
-						key={service.title}
-						index={index}
-						{...service}
-					/>
-				))}
-			</div>
-		</>
-	);
-};
 
 export default SectionWrapper(About, 'about');
