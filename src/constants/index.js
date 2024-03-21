@@ -22,6 +22,13 @@ import {
 	carrent,
 	jobit,
 	tripguide,
+	three_characters,
+	logos,
+	proj2,
+	projpatterns2,
+	projpatterns1,
+	selfPortrait,
+	statueOfLiberty,
 } from '../assets';
 
 export const navLinks = [
@@ -261,4 +268,63 @@ const projects = [
 	},
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const artProjects = [
+	{
+		name: 'Three Characters',
+		description:
+			'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
+		image: three_characters,
+		source_code_link: 'https://github.com/',
+	},
+	{
+		name: 'Logos',
+		description:
+			'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
+		image: logos,
+		source_code_link: 'https://github.com/',
+	},
+	{
+		name: 'Project 2',
+		description:
+			'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+		image: proj2,
+		source_code_link: 'https://github.com/',
+	},
+	{
+		name: 'Project Patterns 1',
+		description:
+			'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+		image: projpatterns1,
+		source_code_link: 'https://github.com/',
+	},
+	{
+		name: 'Project Patterns 2',
+		description:
+			'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+		image: projpatterns2,
+		source_code_link: 'https://github.com/',
+	},
+	{
+		name: 'Self Portrait',
+		description:
+			'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+		image: selfPortrait,
+		source_code_link: 'https://github.com/',
+	},
+	{
+		name: 'Statue of Liberty',
+		description:
+			'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+		image: statueOfLiberty,
+		source_code_link: 'https://github.com/',
+	},
+];
+
+export {
+	services,
+	technologies,
+	experiences,
+	testimonials,
+	projects,
+	artProjects,
+};
